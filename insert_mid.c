@@ -66,22 +66,13 @@ void createNode(int n) {
 void insertMiddle(int position) {
     Node *newNode, *temp = head;
     
-    for (int i = 1; i < position - 1 && temp != NULL; i++) {
+    for (int i = 1; i < p - 1 && temp != NULL; i++) {
         temp = temp->next;
     }
-    
-    if (temp == NULL) {
-        printf("Invalid position for insertion.\n");
-        return;
-    }
+    
     
     newNode = (Node *)malloc(sizeof(Node));
-    
-    if (newNode == NULL) {
-        printf("Memory allocation failed.\n");
-        exit(1);
-    }
-    
+    
     printf("Enter data for the new node at position %d: ", position);
     scanf("%d", &newNode->data);
     newNode->next = temp->next;
